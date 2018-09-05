@@ -87,9 +87,9 @@ void dateType::setDay(int day){
 	if(day <= 0)
         std::cout << day << " is not a valid day.\n";
     else if (day > monthDay[dMonth-1] && !isLeapYear())   
-        std::cout << "There are not " << day << " days in month " << month << ".\n"; 
+        std::cout << "There are not " << day << " days in month " << dMonth << ".\n"; 
     else if (isLeapYear() && dMonth == 2 && day > 29)
-		std::cout << "There are only 29 days in month " << month << " this year.\n";
+		std::cout << "There are only 29 days in month " << dMonth << " this year.\n";
 	else 
 		dDay = day;
 }
@@ -148,4 +148,36 @@ int dateType::daysInMonth(){
 		return 29;
 	else	
 		return monthDay[dMonth - 1];
+}
+
+int dateType::daysPassed(){
+	int sum = 0;
+	for(int i = 0; i < dMonth; i++)
+		sum = sum + monthDay[i];
+	sum = sum - dDay;	
+	return sum;
+}
+
+int dateType::daysRemaining(){
+	if(isLeapYear())
+		return 366 - daysPassed();
+	else
+		return 365 - daysPassed();
+}
+void dateType::operator +(int days){
+	int sum = dDay + days;
+	while(sum > daysInMonth()){
+		if(dMonth!=12)
+			dMonth++;
+		else{
+			dMonth = 1;
+			dYear++;
+		}
+		sum = sum - daysInMonth();
+	}
+	dDay = sum;
+}
+
+void dateType::printDate() const {
+	std::cout << dMonth <<" " << dDay <<", " <<dYear <<std::endl;
 }

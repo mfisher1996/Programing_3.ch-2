@@ -7,10 +7,10 @@
 class extClockType
 {
 public:
-	extClockType(int hours, )
+	extClockType(int hours, int minutes, int seconds);
 	void setTime(int hours, int minutes, int seconds);
 	void getTime(int& hours, int& minutes, int& seconds) const{hours = hr; minutes = min; seconds = sec;};
-	void printTime() const{std::cout <<std::setfill('0') << std::setw(2) << hr 
+	void printTime() const{std::cout <<std::setfill('0') << std::setw(2) << hr; 
 		std::cout << ":";
 		std::cout <<std::setfill('0') <<std::setw(2) << min;
 		std::cout << ":";
@@ -43,6 +43,9 @@ public:
     dateType();
     bool isLeapYear();
     int daysInMonth();
+    int daysPassed();
+    int daysRemaining();
+    void operator+(int days);
 private:
     int monthDay[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int dMonth;
