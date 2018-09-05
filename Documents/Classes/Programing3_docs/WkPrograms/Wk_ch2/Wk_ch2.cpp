@@ -56,13 +56,43 @@ bool extClockType::equalTime(const extClockType & otherClock) const {
  * Question two: dateType
  * 
  * */
+dateType::dateType(){
+dYear= 2001;
+dMonth = 1;
+dDay = 1;
+}
 bool dateType::isLeapYear(){
     if(dYear%4==0)
         return 1;
     else
         return 0;   
 }
+void dateType::setYear(int year){
+	 if(year <= 0 || year > 2999)
+		std::cout << year << " is not a valid year.\n";
+	else
+		dYear = year;
+}
 
+void dateType::setMonth(int month){
+	 if(month > 12 || month <= 0){
+        std::cout << month << " is not a valid month.\n";
+        month = 1;
+        }
+    else
+        dMonth = month;
+}
+
+void dateType::setDay(int day){
+	if(day <= 0)
+        std::cout << day << " is not a valid day.\n";
+    else if (day > monthDay[dMonth-1] && !isLeapYear())   
+        std::cout << "There are not " << day << " days in month " << month << ".\n"; 
+    else if (isLeapYear() && dMonth == 2 && day > 29)
+		std::cout << "There are only 29 days in month " << month << " this year.\n";
+	else 
+		dDay = day;
+}
 void dateType::setDate(int month, int day, int year){
     if(month > 12 || month <= 0){
         std::cout << month << " is not a valid month.\n";

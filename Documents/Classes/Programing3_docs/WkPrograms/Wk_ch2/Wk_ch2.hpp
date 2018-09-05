@@ -40,6 +40,7 @@ public:
     void setMonth(int month);
     void printDate() const;
     dateType(int month, int day, int year);
+    dateType();
     bool isLeapYear();
     int daysInMonth();
 private:
