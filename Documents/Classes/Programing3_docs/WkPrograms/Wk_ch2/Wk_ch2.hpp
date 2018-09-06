@@ -8,6 +8,7 @@ class extClockType
 {
 public:
 	extClockType(int hours, int minutes, int seconds);
+	extClockType();
 	void setTime(int hours, int minutes, int seconds);
 	void getTime(int& hours, int& minutes, int& seconds) const{hours = hr; minutes = min; seconds = sec;};
 	void printTime() const{std::cout <<std::setfill('0') << std::setw(2) << hr; 

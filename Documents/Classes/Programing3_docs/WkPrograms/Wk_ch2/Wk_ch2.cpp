@@ -3,7 +3,13 @@
  * Question one: clockType
  * 
  * */
- 
+
+extClockType::extClockType(){
+	hr =0;
+	min=0;
+	sec=0;
+};
+
 void extClockType::setTime(int hours, int minutes, int seconds){
 if(hours >= 0 && hours < 24)
 	hr = hours;
