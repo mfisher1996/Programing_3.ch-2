@@ -18,27 +18,36 @@ else{
 	}
 if(minute >= 0 && minute < 60)
 	min = minute;
-else
+else{
 	min = 0;
+	std::cout <<minute<< " is an invalid minute input.\n";
+	}
 if(second >= 0 && second < 60)
 	sec = second;
-else
+else{
 	sec = 0;
-
+	std::cout <<second<< " is an invalid second input.\n";
+	}
 };
 void extClockType::setTime(int hours, int minutes, int seconds){
 if(hours >= 0 && hours < 24)
 	hr = hours;
-else
+else{
 	hr = 0;
+	std::cout <<hours<< " is an invalid hour input.\n";
+	}
 if(minutes >= 0 && minutes < 60)
 	min = minutes;
-else
+else{
 	min = 0;
+	std::cout <<minutes<< " is an invalid minute input.\n";
+	}	
 if(seconds >= 0 && seconds < 60)
 	sec = seconds;
-else
+else{
 	sec = 0;
+	std::cout <<seconds<< " is an invalid second input.\n";
+	}
 }
 
 void extClockType::incrementSeconds(){
