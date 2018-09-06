@@ -114,8 +114,6 @@ void dateType::setMonth(int month){
         dMonth = month;
 }
 
-
-//make a change
 void dateType::setDay(int day){
 	if(day <= 0)
         std::cout << day << " is not a valid day.\n";

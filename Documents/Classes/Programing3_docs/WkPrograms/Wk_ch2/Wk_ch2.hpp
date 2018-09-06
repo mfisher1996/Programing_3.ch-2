@@ -35,6 +35,7 @@ public:
     void setDate(int month, int day, int year);
     int getDay() const{return dDay;};
     int getMonth() const{return dMonth;};
+    std::string getMonthName() const{return months[dMonth-1];};
     int getYear() const{return dYear;}
     void setDay(int day);
     void setYear(int year);
