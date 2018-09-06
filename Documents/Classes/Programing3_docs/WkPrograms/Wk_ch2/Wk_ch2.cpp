@@ -114,6 +114,8 @@ void dateType::setMonth(int month){
         dMonth = month;
 }
 
+
+//make a change
 void dateType::setDay(int day){
 	if(day <= 0)
         std::cout << day << " is not a valid day.\n";
@@ -210,5 +212,5 @@ void dateType::operator +(int days){
 }
 
 void dateType::printDate() const {
-	std::cout << dMonth <<" " << dDay <<", " <<dYear <<std::endl;
+	std::cout << months[dMonth-1] <<" " << dDay <<", " <<dYear <<std::endl;
 }

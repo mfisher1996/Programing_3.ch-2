@@ -49,6 +49,7 @@ public:
     void operator+(int days);
 private:
     int monthDay[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    std::string months[12] = {"January","Febuary","March","April","May","June","July","August","September","October","November","December"};
     int dMonth;
     int dDay;
     int dYear;
