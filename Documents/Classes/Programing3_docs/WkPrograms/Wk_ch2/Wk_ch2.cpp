@@ -9,7 +9,23 @@ extClockType::extClockType(){
 	min=0;
 	sec=0;
 };
+extClockType::extClockType(int hour, int minute, int second){
+if(hour >= 0 && hour < 24)
+	hr = hour;
+else{
+	hr = 0;
+	std::cout <<hour<< " is an invalid hour input.\n";
+	}
+if(minute >= 0 && minute < 60)
+	min = minute;
+else
+	min = 0;
+if(second >= 0 && second < 60)
+	sec = second;
+else
+	sec = 0;
 
+};
 void extClockType::setTime(int hours, int minutes, int seconds){
 if(hours >= 0 && hours < 24)
 	hr = hours;

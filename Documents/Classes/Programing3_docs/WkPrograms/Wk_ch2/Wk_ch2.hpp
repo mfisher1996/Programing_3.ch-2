@@ -7,7 +7,7 @@
 class extClockType
 {
 public:
-	extClockType(int hours, int minutes, int seconds);
+	extClockType(int hour, int minute, int second);
 	extClockType();
 	void setTime(int hours, int minutes, int seconds);
 	void getTime(int& hours, int& minutes, int& seconds) const{hours = hr; minutes = min; seconds = sec;};
