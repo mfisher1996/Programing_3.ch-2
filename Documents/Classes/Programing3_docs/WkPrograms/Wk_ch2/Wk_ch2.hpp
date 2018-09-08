@@ -48,6 +48,7 @@ public:
     int daysPassed();
     int daysRemaining();
     void operator+(int days);
+    int daysInMonth(int i);
 private:
     int monthDay[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     std::string months[12] = {"January","Febuary","March","April","May","June","July","August","September","October","November","December"};

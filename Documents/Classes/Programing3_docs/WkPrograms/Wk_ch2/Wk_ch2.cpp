@@ -180,31 +180,39 @@ int dateType::daysInMonth(){
 	else	
 		return monthDay[dMonth - 1];
 }
-
+int dateType::daysInMonth(int i){
+	if (!isLeapYear())
+		return monthDay[i];
+	else if(i == 1)
+		return 29;
+	else	
+		return monthDay[dMonth - 1];
+}
 int dateType::daysPassed(){
 	int sum = 0;
-	for(int i = 0; i < dMonth; i++)
-		sum = sum + monthDay[i];
-	sum = sum - dDay;	
+	for(int i = 0; i < dMonth-1; i++)
+		sum = sum + daysInMonth(i);
+	sum = sum + dDay;	
 	return sum;
 }
 
 int dateType::daysRemaining(){
 	if(isLeapYear())
-		return 366 - daysPassed();
-	else
 		return 365 - daysPassed();
+	else
+		return 364 - daysPassed();
 }
 void dateType::operator +(int days){
 	int sum = dDay + days;
 	while(sum > daysInMonth()){
+		sum = sum - daysInMonth();
 		if(dMonth!=12)
 			dMonth++;
 		else{
 			dMonth = 1;
 			dYear++;
 		}
-		sum = sum - daysInMonth();
+		
 	}
 	dDay = sum;
 }
